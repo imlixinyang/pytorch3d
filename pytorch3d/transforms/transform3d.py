@@ -236,7 +236,7 @@ class Transform3d:
         """
         Return the inverse of self._matrix.
         """
-        return torch.inverse(self._matrix)
+        return torch.inverse(self._matrix.float()).half()
 
     def inverse(self, invert_composed: bool = False):
         """
